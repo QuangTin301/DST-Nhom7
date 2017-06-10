@@ -7,6 +7,7 @@ package dstest;
 
 import Tools.Axe;
 import dstest.BAG.*;
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
@@ -24,8 +25,10 @@ public class DGame extends javax.swing.JPanel implements KeyListener{
     
     final static int MAP_WIDTH = 2400;
     final static int MAP_HEIGHT = 1600;
-    final static int SCREEN_WIDTH = 800;
-    final static int SCREEN_HEIGHT = 600;
+    final static int SCREEN_WIDTH = 1024;
+    final static int SCREEN_HEIGHT = 720;
+    
+    final static boolean endGame = false;
 
     private Image image;
     private Graphics second;
@@ -219,6 +222,7 @@ public class DGame extends javax.swing.JPanel implements KeyListener{
     
     public DGame() {
         initComponents();
+        this.setBackground(Color.BLACK);
         addKeyListener(this);
         
         Init();
@@ -291,6 +295,10 @@ public class DGame extends javax.swing.JPanel implements KeyListener{
         paint(second);
         
         g.drawImage(image, 0, 0, this);
+    }
+    
+    public static boolean getEndGame(){
+        return endGame;
     }
 
     /**
