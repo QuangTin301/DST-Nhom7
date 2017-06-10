@@ -5,6 +5,7 @@
  */
 package dstest;
 
+import Tools.Axe;
 import dstest.BAG.*;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -46,6 +47,8 @@ public class DGame extends javax.swing.JPanel implements KeyListener{
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     //
+    
+    private Axe axe;
     
     private void loadlabel_Bag(){
         jLabel1 = new javax.swing.JLabel();
@@ -120,31 +123,34 @@ public class DGame extends javax.swing.JPanel implements KeyListener{
         jLabel9.setText("jLabel9");
         jLabel10.setText("jLabel10");
 //
+        
+//
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(550, 550, 550)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -152,35 +158,40 @@ public class DGame extends javax.swing.JPanel implements KeyListener{
             .addGroup(layout.createSequentialGroup()
                 .addGap(500, 500, 500)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(0, Short.MAX_VALUE))
         );
     }
     
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {                                      
-        if(BAG.GetQuantity() != 0){
-            JOptionPane.showMessageDialog(this, BAG.GetTypeItem(0) + BAG.GetNameItem(0));                  
+         if(BAG.GetQuantity() > 0){
+            JOptionPane.showMessageDialog(this, BAG.GetTypeItem(0) +" / "+ BAG.GetNameItem(0)+ " / "+BAG.GetQuantityItem(0));                  
         }
     }
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {                                      
-        if(BAG.GetQuantity() != 0){
-            JOptionPane.showMessageDialog(this, BAG.GetTypeItem(1) + BAG.GetNameItem(1));                  
+        if(BAG.GetQuantity() > 1){
+            JOptionPane.showMessageDialog(this, BAG.GetTypeItem(1) +" / "+ BAG.GetNameItem(1)+ " / "+BAG.GetQuantityItem(1));                  
         }
     }
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {                                      
-        
+         if(BAG.GetQuantity() > 2){
+            JOptionPane.showMessageDialog(this, BAG.GetTypeItem(2) +" / "+ BAG.GetNameItem(2)+ " / "+BAG.GetQuantityItem(2));                  
+        }
     }
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {                                      
         // TODO add your handling code here:
+         if(BAG.GetQuantity() > 3){
+            JOptionPane.showMessageDialog(this, BAG.GetTypeItem(3) +" / "+ BAG.GetNameItem(3)+ " / "+BAG.GetQuantityItem(3));                  
+        }
     }
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {                                      
         // TODO add your handling code here:
@@ -198,7 +209,11 @@ public class DGame extends javax.swing.JPanel implements KeyListener{
         // TODO add your handling code here:
     }
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {                                      
-        // TODO add your handling code here:
+        if(axe.CheckCondition(BAG)){
+                JOptionPane.showMessageDialog(this, "True");  
+            }else{
+                JOptionPane.showMessageDialog(this, "False");        
+            } 
     }
     
     
@@ -210,6 +225,7 @@ public class DGame extends javax.swing.JPanel implements KeyListener{
         LoadResource();
         loadlabel_Bag();
         
+        axe = new Axe();
         
         try{
             Map.DrawMap("res/tilemap.txt");
@@ -388,13 +404,33 @@ public class DGame extends javax.swing.JPanel implements KeyListener{
             case KeyEvent.VK_SPACE:{
                 
             } break;
-            
-            case KeyEvent.VK_J:{
+            //
+            case KeyEvent.VK_NUMPAD0:{
                 BAG.Add_item(0, 1);
                 BAG.Load();
             } break;
-            case KeyEvent.VK_K:{
+            case KeyEvent.VK_NUMPAD1:{
                 BAG.Add_item(1, 1);
+                BAG.Load();
+            } break;
+            case KeyEvent.VK_NUMPAD2:{
+                BAG.Add_item(2, 1);
+                BAG.Load();
+            } break;
+            case KeyEvent.VK_NUMPAD3:{
+                BAG.Add_item(3, 1);
+                BAG.Load();
+            } break;
+            case KeyEvent.VK_NUMPAD4:{
+                BAG.Add_item(4, 1);
+                BAG.Load();
+            } break;
+            case KeyEvent.VK_NUMPAD5:{
+                BAG.Add_item(5, 1);
+                BAG.Load();
+            } break;
+            case KeyEvent.VK_NUMPAD6:{
+                BAG.Add_item(6, 1);
                 BAG.Load();
             } break;
         }

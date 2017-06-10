@@ -5,18 +5,14 @@
  */
 package dstest.BAG;
 
-import dstest.DCamera;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import javax.imageio.ImageIO;
 
 /**
  *
  * @author 14520
  */
-public class carots extends Base_Item{
-       
+public class Meat_Spider extends Base_Item{
     private BufferedImage Image_Item;
     //private BufferedImage[][] WillsubImage;
     //private DAnimation WillUp, WillDown, WillLeft, WillRight;
@@ -24,17 +20,21 @@ public class carots extends Base_Item{
     //private ArrayList<DAnimation> WillState;   
     //private int dir; 
    
-    public carots(int X, int Y){
+    public Meat_Spider(int X, int Y){
        super(X,Y);
        
-       Name_Item = "Carot";
-       Type_Item = 1;
-       Quantity = 1;
+       Name_Item = "Meat_spider";
+       Type_Item = 3;
+       Quantity = 0;
+       
+       //
+       imgItem = "res/Bag_item/item.PNG";
+       //
     }
     
     public void Load(){        
         super.Load();
-        Image_Item = Item.getSubimage(0 + Width_Item,0,Width_Item,Height_Item);                     
+        Image_Item = Item.getSubimage(0 + Width_Item,0 + Height_Item,Width_Item,Height_Item);                     
     }
     
     public void Draw(Graphics g){      

@@ -18,7 +18,7 @@ import javax.imageio.ImageIO;
  */
 public class Base_Item {
     
-    final static String imgItem = "res/Bag_item/item.PNG";  
+    protected String imgItem;  
     
     protected BufferedImage Item;
     
@@ -42,6 +42,7 @@ public class Base_Item {
         
         centerX = X + Width_Item/2;
         centerY = Y + Height_Item/2;
+              
     };
     
     public String GetName() {

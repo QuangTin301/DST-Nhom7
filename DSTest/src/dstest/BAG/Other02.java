@@ -5,43 +5,35 @@
  */
 package dstest.BAG;
 
-import dstest.DAnimation;
-import dstest.DCamera;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.util.ArrayList;
-import javax.imageio.ImageIO;
 
 /**
  *
  * @author 14520
  */
-public class meats extends Base_Item{
- 
+public class Other02 extends Base_Item{
     private BufferedImage Image_Item;
     //private BufferedImage[][] WillsubImage;
     //private DAnimation WillUp, WillDown, WillLeft, WillRight;
     //private boolean isUp, isDown, isLeft, isRight;  
     //private ArrayList<DAnimation> WillState;   
-    //private int dir;
-
-    
-    public meats(int X, int Y){
-        super(X,Y);
-             
-        Name_Item = "Meats";
-        Type_Item = 0;
-        Quantity = 1;
+    //private int dir; 
+   
+    public Other02(int X, int Y){
+       super(X,Y);
+       
+       Name_Item = "Carot";
+       Type_Item = 1;
+       Quantity = 0;
     }
     
-    public void Load(){
+    public void Load(){        
         super.Load();
-        Image_Item = Item.getSubimage(0,0,Width_Item,Height_Item);                      
+        Image_Item = Item.getSubimage(0 + Width_Item,0,Width_Item,Height_Item);                     
     }
     
     public void Draw(Graphics g){      
         g.drawImage(Image_Item, centerX , centerY , null);
     }
-      
 }

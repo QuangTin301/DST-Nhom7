@@ -74,18 +74,44 @@ public class Bag_Item {
                     cur +=1;
                     news = true;
                 }
+                
             }
             
             
             if(news == true){
                 switch (type){
                     case 0:{
-                        BAG_Item.add(new meats(centerX + Width_Item*cur ,centerY));
+                        BAG_Item.add(new Meat_Monter1(centerX + Width_Item*cur ,centerY));
                         news = false;
                         Item_Quantity +=1;
                     } break;
                     case 1: {
-                        BAG_Item.add(new carots(centerX + Width_Item*cur ,centerY));
+                        BAG_Item.add(new Carots(centerX + Width_Item*cur ,centerY));
+                        news = false;
+                        Item_Quantity +=1;
+                    } break;
+                    case 2:{
+                        BAG_Item.add(new Meat_Monter2(centerX + Width_Item*cur ,centerY));
+                        news = false;
+                        Item_Quantity +=1;
+                    } break;
+                    case 3:{
+                        BAG_Item.add(new Meat_Spider(centerX + Width_Item*cur ,centerY));
+                        news = false;
+                        Item_Quantity +=1;
+                    } break;
+                    case 4:{
+                        BAG_Item.add(new Bough(centerX + Width_Item*cur ,centerY));
+                        news = false;
+                        Item_Quantity +=1;
+                    } break;
+                    case 5:{
+                        BAG_Item.add(new Berry(centerX + Width_Item*cur ,centerY));
+                        news = false;
+                        Item_Quantity +=1;
+                    } break;
+                    case 6:{
+                        BAG_Item.add(new Other01(centerX + Width_Item*cur ,centerY));
                         news = false;
                         Item_Quantity +=1;
                     } break;
@@ -96,6 +122,7 @@ public class Bag_Item {
             } else {
                 SoLuong = SoLuong + BAG_Item.get(vitri).GetQuantity();
                 BAG_Item.get(vitri).SetQuantity(SoLuong);
+                vitri = -1;
             }         
         }       
     }
@@ -112,5 +139,9 @@ public class Bag_Item {
     
     public String GetNameItem(int i){
         return BAG_Item.get(i).GetName();
+    }
+    
+    public int GetQuantityItem(int i){
+        return BAG_Item.get(i).Quantity;
     }
 }
