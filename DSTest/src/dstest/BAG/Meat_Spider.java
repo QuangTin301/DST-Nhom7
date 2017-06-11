@@ -7,13 +7,15 @@ package dstest.BAG;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import javax.imageio.ImageIO;
 
 /**
  *
  * @author 14520
  */
 public class Meat_Spider extends Base_Item{
-    private BufferedImage Image_Item;
+
     //private BufferedImage[][] WillsubImage;
     //private DAnimation WillUp, WillDown, WillLeft, WillRight;
     //private boolean isUp, isDown, isLeft, isRight;  
@@ -24,17 +26,20 @@ public class Meat_Spider extends Base_Item{
        super(X,Y);
        
        Name_Item = "Meat_spider";
-       Type_Item = 3;
+       Type_Item = 14;
        Quantity = 0;
        
        //
-       imgItem = "res/Bag_item/item.PNG";
+       URL_Image_Item = "res/Bag_item/monster_meat.PNG";
        //
     }
     
     public void Load(){        
-        super.Load();
-        Image_Item = Item.getSubimage(0 + Width_Item,0 + Height_Item,Width_Item,Height_Item);                     
+        try{
+            Image_Item = ImageIO.read(new File(URL_Image_Item));                    
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
     
     public void Draw(Graphics g){      

@@ -16,8 +16,7 @@ import javax.imageio.ImageIO;
  * @author 14520
  */
 public class Carots extends Base_Item{
-       
-    private BufferedImage Image_Item;
+
     //private BufferedImage[][] WillsubImage;
     //private DAnimation WillUp, WillDown, WillLeft, WillRight;
     //private boolean isUp, isDown, isLeft, isRight;  
@@ -28,17 +27,20 @@ public class Carots extends Base_Item{
        super(X,Y);
        
        Name_Item = "Carot";
-       Type_Item = 1;
+       Type_Item = 12;
        Quantity = 0;
        
        //
-       imgItem = "res/Bag_item/item.PNG";
+       URL_Image_Item = "res/Bag_item/carrot.PNG";
        //
     }
     
     public void Load(){        
-        super.Load();
-        Image_Item = Item.getSubimage(0 + Width_Item,0,Width_Item,Height_Item);                     
+        try{
+            Image_Item = ImageIO.read(new File(URL_Image_Item));                    
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
     
     public void Draw(Graphics g){      

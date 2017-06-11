@@ -5,7 +5,8 @@
  */
 package dstest;
 
-import Tools.Axe;
+
+import Tools.Tools;
 import dstest.BAG.*;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -37,7 +38,7 @@ public class DGame extends javax.swing.JPanel implements KeyListener{
     private DMap Map;
     public DCamera camera;
     private Bag_Item BAG;
-  
+    private Tools TOOL;
     //
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -51,174 +52,287 @@ public class DGame extends javax.swing.JPanel implements KeyListener{
     private javax.swing.JLabel jLabel9;
     //
     
-    private Axe axe;
+    private javax.swing.JLabel Tool1;  
+    private javax.swing.JLabel Tool2;
+    private javax.swing.JLabel Tool3;
+    private javax.swing.JLabel Tool4;
+    private javax.swing.JLabel Tool5;
+    private javax.swing.JLabel Tool6;
+    private javax.swing.JLabel Tool7;
+    private javax.swing.JLabel Tool8;
+    private javax.swing.JLabel Tool9;
+    private javax.swing.JLabel Tool10;
+    private javax.swing.JLabel Tool11;
+
     
-    private void loadlabel_Bag(){
+    private void loadLabel_Bag(){
         jLabel1 = new javax.swing.JLabel();
+        this.add(jLabel1);
+        jLabel1.setBounds(136 + (60+17)*0, 608, 60, 60);
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
+                BagItem1MouseClicked(evt);
             }
         });
+           
         jLabel2 = new javax.swing.JLabel();
+        this.add(jLabel2);
+        jLabel2.setBounds(136 + (60+17)*1, 608, 60, 60);
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
+                BagItem2MouseClicked(evt);
             }
         });
+        
         jLabel3 = new javax.swing.JLabel();
+        this.add(jLabel3);
+        jLabel3.setBounds(136 + (60+17)*2, 608, 60, 60);
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel3MouseClicked(evt);
+                BagItem3MouseClicked(evt);
             }
         });
+        
         jLabel4 = new javax.swing.JLabel();
+        this.add(jLabel4);
+        jLabel4.setBounds(136 + (60+17)*3, 608, 60, 60);
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
+                BagItem4MouseClicked(evt);
             }
         });
+        
         jLabel5 = new javax.swing.JLabel();
+        this.add(jLabel5);
+        jLabel5.setBounds(136 + (60+17)*4, 608, 60, 60);
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
+                BagItem5MouseClicked(evt);
             }
         });
+        
         jLabel6 = new javax.swing.JLabel();
+        this.add(jLabel6);
+        jLabel6.setBounds(136 + (60+17)*5, 608, 60, 60);
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel6MouseClicked(evt);
+                BagItem6MouseClicked(evt);
             }
         });
+        
         jLabel7 = new javax.swing.JLabel();
+        this.add(jLabel7);
+        jLabel7.setBounds(136 + (60+17)*6, 608, 60, 60);
         jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel7MouseClicked(evt);
+                BagItem7MouseClicked(evt);
             }
         });
+        
         jLabel8 = new javax.swing.JLabel();
+        this.add(jLabel8);
+        jLabel8.setBounds(136 + (60+17)*7, 608, 60, 60);
         jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel8MouseClicked(evt);
+                BagItem8MouseClicked(evt);
             }
         });
+        
         jLabel9 = new javax.swing.JLabel();
+        this.add(jLabel9);
+        jLabel9.setBounds(136 + (60+17)*8, 608, 60, 60);
         jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel9MouseClicked(evt);
+                BagItem9MouseClicked(evt);
             }
         });
+        
         jLabel10 = new javax.swing.JLabel();
+        this.add(jLabel10);
+        jLabel10.setBounds(136 + (60+17)*9, 608, 60, 60);
         jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel10MouseClicked(evt);
+                BagItem10MouseClicked(evt);
             }
         });
-//
-        jLabel1.setText("jLabel1");
-        jLabel2.setText("jLabel2");
-        jLabel3.setText("jLabel3");
-        jLabel4.setText("jLabel4");
-        jLabel5.setText("jLabel5");
-        jLabel6.setText("jLabel6");
-        jLabel7.setText("jLabel7");
-        jLabel8.setText("jLabel8");
-        jLabel9.setText("jLabel9");
-        jLabel10.setText("jLabel10");
-//
-        
-//
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(550, 550, 550)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(500, 500, 500)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(0, Short.MAX_VALUE))
-        );
-    }
-    
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {                                      
+    }   
+    private void BagItem1MouseClicked(java.awt.event.MouseEvent evt) {                                      
          if(BAG.GetQuantity() > 0){
             JOptionPane.showMessageDialog(this, BAG.GetTypeItem(0) +" / "+ BAG.GetNameItem(0)+ " / "+BAG.GetQuantityItem(0));                  
         }
     }
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {                                      
+    private void BagItem2MouseClicked(java.awt.event.MouseEvent evt) {                                      
         if(BAG.GetQuantity() > 1){
             JOptionPane.showMessageDialog(this, BAG.GetTypeItem(1) +" / "+ BAG.GetNameItem(1)+ " / "+BAG.GetQuantityItem(1));                  
         }
     }
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {                                      
+    private void BagItem3MouseClicked(java.awt.event.MouseEvent evt) {                                      
          if(BAG.GetQuantity() > 2){
             JOptionPane.showMessageDialog(this, BAG.GetTypeItem(2) +" / "+ BAG.GetNameItem(2)+ " / "+BAG.GetQuantityItem(2));                  
         }
     }
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {                                      
+    private void BagItem4MouseClicked(java.awt.event.MouseEvent evt) {                                      
         // TODO add your handling code here:
          if(BAG.GetQuantity() > 3){
             JOptionPane.showMessageDialog(this, BAG.GetTypeItem(3) +" / "+ BAG.GetNameItem(3)+ " / "+BAG.GetQuantityItem(3));                  
         }
     }
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {                                      
+    private void BagItem5MouseClicked(java.awt.event.MouseEvent evt) {                                      
         // TODO add your handling code here:
     }
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {                                      
+    private void BagItem6MouseClicked(java.awt.event.MouseEvent evt) {                                      
         // TODO add your handling code here:
     }
-    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {                                      
+    private void BagItem7MouseClicked(java.awt.event.MouseEvent evt) {                                      
         // TODO add your handling code here:
     }
-    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {                                      
+    private void BagItem8MouseClicked(java.awt.event.MouseEvent evt) {                                      
         // TODO add your handling code here:
     }
-    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {                                      
+    private void BagItem9MouseClicked(java.awt.event.MouseEvent evt) {                                      
         // TODO add your handling code here:
     }
-    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {                                      
-        if(axe.CheckCondition(BAG)){
+    private void BagItem10MouseClicked(java.awt.event.MouseEvent evt) {                                      
+        if(TOOL.Get_TT_Axe() == 1){
                 JOptionPane.showMessageDialog(this, "True");  
             }else{
                 JOptionPane.showMessageDialog(this, "False");        
             } 
     }
     
+    private void LoadLabel_Tool(){
+        Tool1 = new javax.swing.JLabel();
+        this.add(Tool1);
+        Tool1.setBounds(12, 23 + 60*0, 60, 60);
+        Tool1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ToolItem1MouseClicked(evt);
+            }
+        });
+           
+        Tool2 = new javax.swing.JLabel();
+        this.add(Tool2);
+        Tool2.setBounds(12, 23 + 60*1, 60, 60);
+        Tool2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ToolItem2MouseClicked(evt);
+            }
+        });
+        
+        Tool3 = new javax.swing.JLabel();
+        this.add(Tool3);
+        Tool3.setBounds(12, 23 + 60*2, 60, 60);
+        Tool3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ToolItem3MouseClicked(evt);
+            }
+        });
+        
+        Tool4 = new javax.swing.JLabel();
+        this.add(Tool4);
+        Tool4.setBounds(12, 23 + 60*3, 60, 60);
+        Tool4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ToolItem4MouseClicked(evt);
+            }
+        });
+        
+        Tool5 = new javax.swing.JLabel();
+        this.add(Tool5);
+        Tool5.setBounds(12, 23 + 60*4, 60, 60);
+        Tool5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ToolItem5MouseClicked(evt);
+            }
+        });
+        
+        Tool6 = new javax.swing.JLabel();
+        this.add(Tool6);
+        Tool6.setBounds(12, 23 + 60*5, 60, 60);
+        Tool6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ToolItem6MouseClicked(evt);
+            }
+        });
+        
+        Tool7 = new javax.swing.JLabel();
+        this.add(Tool7);
+        Tool7.setBounds(12, 23 + 60*6, 60, 60);
+        Tool7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ToolItem7MouseClicked(evt);
+            }
+        });
+        
+        Tool8 = new javax.swing.JLabel();
+        this.add(Tool8);
+        Tool8.setBounds(12, 23 + 60*7, 60, 60);
+        Tool8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ToolItem8MouseClicked(evt);
+            }
+        });
+        
+        Tool9 = new javax.swing.JLabel();
+        this.add(Tool9);
+        Tool9.setBounds(12, 23 + 60*8, 60, 60);
+        Tool9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ToolItem9MouseClicked(evt);
+            }
+        });
+        
+        Tool10 = new javax.swing.JLabel();
+        this.add(Tool10);
+        Tool10.setBounds(12, 23 + 60*9, 60, 60);
+        Tool10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ToolItem10MouseClicked(evt);
+            }
+        });
+        
+        Tool11 = new javax.swing.JLabel();
+        this.add(Tool11);
+        Tool11.setBounds(12, 23 + 60*10, 60, 60);
+        Tool11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ToolItem11MouseClicked(evt);
+            }
+        });      
+    }
+    private void ToolItem1MouseClicked(java.awt.event.MouseEvent evt) {                                            
+        JOptionPane.showMessageDialog(this, "1");                  
+    }
+    private void ToolItem2MouseClicked(java.awt.event.MouseEvent evt) {                                      
+        JOptionPane.showMessageDialog(this, "2");   
+    }
+    private void ToolItem3MouseClicked(java.awt.event.MouseEvent evt) {                                      
+        JOptionPane.showMessageDialog(this, "3");   
+    }
+    private void ToolItem4MouseClicked(java.awt.event.MouseEvent evt) {                                      
+        JOptionPane.showMessageDialog(this, "4");   
+    }
+    private void ToolItem5MouseClicked(java.awt.event.MouseEvent evt) {                                      
+        JOptionPane.showMessageDialog(this, "5");   
+    }
+    private void ToolItem6MouseClicked(java.awt.event.MouseEvent evt) {                                      
+        JOptionPane.showMessageDialog(this, "6");   
+    }
+    private void ToolItem7MouseClicked(java.awt.event.MouseEvent evt) {                                      
+        JOptionPane.showMessageDialog(this, "7");   
+    }
+    private void ToolItem8MouseClicked(java.awt.event.MouseEvent evt) {                                      
+        JOptionPane.showMessageDialog(this, "8");   
+    }
+    private void ToolItem9MouseClicked(java.awt.event.MouseEvent evt) {                                      
+        JOptionPane.showMessageDialog(this, "9");   
+    }
+    private void ToolItem10MouseClicked(java.awt.event.MouseEvent evt) {                                      
+        JOptionPane.showMessageDialog(this, "10");   
+    }
+    private void ToolItem11MouseClicked(java.awt.event.MouseEvent evt) {                                      
+        JOptionPane.showMessageDialog(this, "11");   
+    }
     
     public DGame() {
         initComponents();
@@ -227,9 +341,10 @@ public class DGame extends javax.swing.JPanel implements KeyListener{
         
         Init();
         LoadResource();
-        loadlabel_Bag();
         
-        axe = new Axe();
+        loadLabel_Bag();
+        LoadLabel_Tool();
+        
         
         try{
             Map.DrawMap("res/tilemap.txt");
@@ -258,19 +373,22 @@ public class DGame extends javax.swing.JPanel implements KeyListener{
         Willson = new DChar();
         Map = new DMap();
         camera = new DCamera(0, 0);
-        BAG = new Bag_Item();
+        BAG = new Bag_Item();  
+        TOOL = new Tools();
     }
     
     public void LoadResource(){
         Willson.Load();
         Map.Load();    
         camera.Load(Willson.getCenterX() - SCREEN_WIDTH/2, Willson.getCenterY() - SCREEN_HEIGHT/2);
-        
+        BAG.LoadBar();
+        TOOL.load();
     }
     
     public void GameRun(){
         Willson.update(camera);
         Map.update();
+        TOOL.update(BAG);
     }
         
     @Override
@@ -279,7 +397,10 @@ public class DGame extends javax.swing.JPanel implements KeyListener{
 
         Map.Draw(g, camera);
         Willson.Draw(g, camera);
+        BAG.Draw_Bot_Bar(g);
+        
         BAG.Draw(g);
+        TOOL.Draw_Left_Bar(g);
     }
     
     @Override
@@ -414,31 +535,43 @@ public class DGame extends javax.swing.JPanel implements KeyListener{
             } break;
             //
             case KeyEvent.VK_NUMPAD0:{
-                BAG.Add_item(0, 1);
+                BAG.Add_item(51, 1);
                 BAG.Load();
             } break;
             case KeyEvent.VK_NUMPAD1:{
-                BAG.Add_item(1, 1);
+                BAG.Add_item(11, 1);
                 BAG.Load();
             } break;
             case KeyEvent.VK_NUMPAD2:{
-                BAG.Add_item(2, 1);
+                BAG.Add_item(12, 1);
                 BAG.Load();
             } break;
             case KeyEvent.VK_NUMPAD3:{
-                BAG.Add_item(3, 1);
+                BAG.Add_item(13, 1);
                 BAG.Load();
             } break;
             case KeyEvent.VK_NUMPAD4:{
-                BAG.Add_item(4, 1);
+                BAG.Add_item(14, 1);
                 BAG.Load();
             } break;
             case KeyEvent.VK_NUMPAD5:{
-                BAG.Add_item(5, 1);
+                BAG.Add_item(35, 1);
                 BAG.Load();
             } break;
             case KeyEvent.VK_NUMPAD6:{
-                BAG.Add_item(6, 1);
+                BAG.Add_item(41, 1);
+                BAG.Load();
+            } break;
+            case KeyEvent.VK_NUMPAD7:{
+                BAG.Add_item(42, 1);
+                BAG.Load();
+            } break;
+            case KeyEvent.VK_NUMPAD8:{
+                BAG.Add_item(16, 1);
+                BAG.Load();
+            } break;
+            case KeyEvent.VK_NUMPAD9:{
+                BAG.Add_item(15, 1);
                 BAG.Load();
             } break;
         }

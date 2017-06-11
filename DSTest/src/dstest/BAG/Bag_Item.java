@@ -8,13 +8,18 @@ package dstest.BAG;
 import dstest.DCamera;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.util.ArrayList;
+import javax.imageio.ImageIO;
 
 /**
  *
  * @author 14520
  */
 public class Bag_Item {
+    protected String URL_Image_Bar = "res/bot_bar.PNG";     
+    protected BufferedImage Image_Bar;
+    
     private ArrayList<Base_Item> BAG_Item;
     
     private int centerX;
@@ -42,10 +47,11 @@ public class Bag_Item {
         cur = -1;
         vitri = -1;
         
-        centerX = 0;
-        centerY = 440;
-        Width_Item = 72;
+        centerX = 110;
+        centerY = 580;
+        Width_Item = 60;
    
+        
     }
 
     public void Load(){
@@ -53,6 +59,14 @@ public class Bag_Item {
             for( int i = 0; i < BAG_Item.size(); i++){               
                 BAG_Item.get(i).Load();
             }
+        }
+    }
+    
+    public void LoadBar(){
+        try{
+            Image_Bar = ImageIO.read(new File(URL_Image_Bar));                    
+        }catch(Exception e){
+            e.printStackTrace();
         }
     }
     
@@ -80,41 +94,91 @@ public class Bag_Item {
             
             if(news == true){
                 switch (type){
-                    case 0:{
-                        BAG_Item.add(new Meat_Monter1(centerX + Width_Item*cur ,centerY));
+                    case 11:{
+                        BAG_Item.add(new Berry(centerX + (Width_Item+17)*cur ,centerY));
                         news = false;
                         Item_Quantity +=1;
                     } break;
-                    case 1: {
-                        BAG_Item.add(new Carots(centerX + Width_Item*cur ,centerY));
+                    case 12: {
+                        BAG_Item.add(new Carots(centerX + (Width_Item+17)*cur ,centerY));
                         news = false;
                         Item_Quantity +=1;
                     } break;
-                    case 2:{
-                        BAG_Item.add(new Meat_Monter2(centerX + Width_Item*cur ,centerY));
+                    case 13:{
+                        BAG_Item.add(new Flower(centerX + (Width_Item +17)*cur ,centerY));
                         news = false;
                         Item_Quantity +=1;
                     } break;
-                    case 3:{
-                        BAG_Item.add(new Meat_Spider(centerX + Width_Item*cur ,centerY));
+                    case 14:{
+                        BAG_Item.add(new Meat_Spider(centerX + (Width_Item +17)*cur ,centerY));
                         news = false;
                         Item_Quantity +=1;
                     } break;
-                    case 4:{
-                        BAG_Item.add(new Bough(centerX + Width_Item*cur ,centerY));
+                    case 15:{
+                        BAG_Item.add(new Big_Meat(centerX + (Width_Item +17)*cur ,centerY));
                         news = false;
                         Item_Quantity +=1;
                     } break;
-                    case 5:{
-                        BAG_Item.add(new Berry(centerX + Width_Item*cur ,centerY));
+                    case 16:{
+                        BAG_Item.add(new Small_Meat(centerX + (Width_Item +17)*cur ,centerY));
+                        news = false;
+                        Item_Quantity +=1;
+                    } break;  
+                    case 21:{
+                        BAG_Item.add(new Gold(centerX + (Width_Item +17)*cur ,centerY));
                         news = false;
                         Item_Quantity +=1;
                     } break;
-                    case 6:{
-                        BAG_Item.add(new Other01(centerX + Width_Item*cur ,centerY));
+                    case 22:{
+                        BAG_Item.add(new Rock(centerX + (Width_Item +17)*cur ,centerY));
                         news = false;
                         Item_Quantity +=1;
                     } break;
+                    case 31:{
+                        BAG_Item.add(new Bough(centerX + (Width_Item +17)*cur ,centerY));
+                        news = false;
+                        Item_Quantity +=1;
+                    } break;
+                    case 32:{
+                        BAG_Item.add(new Straw(centerX + (Width_Item +17)*cur ,centerY));
+                        news = false;
+                        Item_Quantity +=1;
+                    } break;
+                    case 33:{
+                        BAG_Item.add(new Wood(centerX + (Width_Item +17)*cur ,centerY));
+                        news = false;
+                        Item_Quantity +=1;
+                    } break;
+                    case 34:{
+                        BAG_Item.add(new Reed(centerX + (Width_Item +17)*cur ,centerY));
+                        news = false;
+                        Item_Quantity +=1;
+                    } break;
+                    case 35:{
+                        BAG_Item.add(new Silk(centerX + (Width_Item +17)*cur ,centerY));
+                        news = false;
+                        Item_Quantity +=1;
+                    } break;
+                    case 41:{
+                        BAG_Item.add(new Teeth_Monter(centerX + (Width_Item +17)*cur ,centerY));
+                        news = false;
+                        Item_Quantity +=1;
+                    } break;
+                    case 42:{
+                        BAG_Item.add(new Bone(centerX + (Width_Item +17)*cur ,centerY));
+                        news = false;
+                        Item_Quantity +=1;
+                    } break;
+                    case 51:{
+                        BAG_Item.add(new GEM(centerX + (Width_Item +17)*cur ,centerY));
+                        news = false;
+                        Item_Quantity +=1;
+                    } break;
+                    case 52:{
+                        BAG_Item.add(new Diamond(centerX + (Width_Item +17)*cur ,centerY));
+                        news = false;
+                        Item_Quantity +=1;
+                    } break;     
                 }
                 
                 SoLuong = SoLuong + BAG_Item.get(cur).GetQuantity();
@@ -131,6 +195,10 @@ public class Bag_Item {
         for( int i = 0; i < BAG_Item.size(); i++){               
                 BAG_Item.get(i).Draw(g);               
         }
+    };
+    
+    public void Draw_Bot_Bar(Graphics g){      
+        g.drawImage(Image_Bar, centerX , centerY , null);
     };
 
     public int GetTypeItem(int i){

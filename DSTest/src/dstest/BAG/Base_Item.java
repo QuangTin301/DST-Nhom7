@@ -18,9 +18,8 @@ import javax.imageio.ImageIO;
  */
 public class Base_Item {
     
-    protected String imgItem;  
-    
-    protected BufferedImage Item;
+    protected String URL_Image_Item;     
+    protected BufferedImage Image_Item;
     
     protected String Name_Item;   
     protected int Type_Item;
@@ -37,11 +36,11 @@ public class Base_Item {
     
     public Base_Item(int X, int Y){
        
-        Width_Item = 72;
-        Height_Item = 72;
+        Width_Item = 60; //72
+        Height_Item = 60;
         
-        centerX = X + Width_Item/2;
-        centerY = Y + Height_Item/2;
+        centerX = X + 26;// + Width_Item/2;
+        centerY = Y + 28;// + Height_Item/2;
               
     };
     
@@ -60,14 +59,7 @@ public class Base_Item {
     }
     
     // load image
-    public void Load(){    
-        try{
-            Item = ImageIO.read(new File(imgItem));                    
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-        
-    };
+    public void Load() {};
     
     // vẽ item
     public void Draw(Graphics g){};
