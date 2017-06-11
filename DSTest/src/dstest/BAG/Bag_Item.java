@@ -123,6 +123,11 @@ public class Bag_Item {
                         BAG_Item.add(new Small_Meat(centerX + (Width_Item +17)*cur ,centerY));
                         news = false;
                         Item_Quantity +=1;
+                    } break; 
+                    case 17:{
+                        BAG_Item.add(new Item_Ice(centerX + (Width_Item +17)*cur ,centerY));
+                        news = false;
+                        Item_Quantity +=1;
                     } break;  
                     case 21:{
                         BAG_Item.add(new Gold(centerX + (Width_Item +17)*cur ,centerY));
@@ -178,7 +183,47 @@ public class Bag_Item {
                         BAG_Item.add(new Diamond(centerX + (Width_Item +17)*cur ,centerY));
                         news = false;
                         Item_Quantity +=1;
-                    } break;     
+                    } break;  
+                    case 61:{
+                        BAG_Item.add(new Key(centerX + (Width_Item +17)*cur ,centerY));
+                        news = false;
+                        Item_Quantity +=1;
+                    } break;   
+                    case 62:{
+                        BAG_Item.add(new Staff(centerX + (Width_Item +17)*cur ,centerY));
+                        news = false;
+                        Item_Quantity +=1;
+                    } break;  
+                    case 71:{
+                        BAG_Item.add(new Item_Axe(centerX + (Width_Item +17)*cur ,centerY));
+                        news = false;
+                        Item_Quantity +=1;
+                    } break;   
+                    case 72:{
+                        BAG_Item.add(new Item_PickAxe(centerX + (Width_Item +17)*cur ,centerY));
+                        news = false;
+                        Item_Quantity +=1;
+                    } break;  
+                    case 73:{
+                        BAG_Item.add(new Item_Spear(centerX + (Width_Item +17)*cur ,centerY));
+                        news = false;
+                        Item_Quantity +=1;
+                    } break;   
+                    case 74:{
+                        BAG_Item.add(new Item_Flall(centerX + (Width_Item +17)*cur ,centerY));
+                        news = false;
+                        Item_Quantity +=1;
+                    } break;  
+                    case 75:{
+                        BAG_Item.add(new Item_HP(centerX + (Width_Item +17)*cur ,centerY));
+                        news = false;
+                        Item_Quantity +=1;
+                    } break;  
+                    case 76:{
+                        BAG_Item.add(new Item_Brick(centerX + (Width_Item +17)*cur ,centerY));
+                        news = false;
+                        Item_Quantity +=1;
+                    } break;   
                 }
                 
                 SoLuong = SoLuong + BAG_Item.get(cur).GetQuantity();

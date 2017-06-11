@@ -6,6 +6,12 @@
 package Tools;
 
 import dstest.BAG.Bag_Item;
+import dstest.BAG.Bough;
+import dstest.BAG.Flower;
+import dstest.BAG.Rock;
+import dstest.BAG.Silk;
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -16,6 +22,8 @@ import javax.imageio.ImageIO;
  * @author 14520
  */
 public class Hp_Potion implements Base_Tools{
+    protected String URL_Image_Frame = "res/window_2.PNG";     
+    protected BufferedImage Image_Frame;
 
     protected String URL_Image_NOT = "res/Tools/Hp_Potion_not.PNG";  
     protected String URL_Image = "res/Tools/Hp_Potion.PNG";     
@@ -45,7 +53,9 @@ public class Hp_Potion implements Base_Tools{
         try{
             Image_NOT = ImageIO.read(new File(URL_Image_NOT));     
             Image = ImageIO.read(new File(URL_Image)); 
-            Image_PICKED = ImageIO.read(new File(URL_Image_PICKED));     
+            Image_PICKED = ImageIO.read(new File(URL_Image_PICKED));    
+            
+            Image_Frame = ImageIO.read(new File(URL_Image_Frame));  
         }catch(Exception e){
             e.printStackTrace();
         }
@@ -101,5 +111,33 @@ public class Hp_Potion implements Base_Tools{
     @Override
     public void Set_TT(int T) {
         TT = T;
+    }
+
+    @Override
+    public void DrawSuggest(Graphics g, int X, int Y) {
+        Font font = new Font("Belisa plumilla manual", Font.PLAIN, 20);
+        Font font2 = new Font("Belisa plumilla manual", Font.BOLD, 20);
+        
+        g.drawImage(Image_Frame, X + 20, Y + 15, null);
+        
+        Flower  flower = new Flower (X +  65 ,Y + 85);
+        Silk    silk   = new Silk   (X + 140 ,Y + 85);
+        
+        flower.Load();
+        flower.Draw(g);
+        silk.Load();
+        silk.Draw(g);
+        
+        g.setColor(Color.red);
+        
+        
+        
+        g.setFont(font);                      
+        g.drawString("Heal", X + 100, Y + 250);
+        
+        g.setFont(font2);   
+        g.drawString("HP POTION", X + 130, Y + 90);
+        g.drawString("x 5", X + 133, Y + 170);
+        g.drawString("x 1", X + 213, Y + 170);
     }
 }

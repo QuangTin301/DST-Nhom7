@@ -13,6 +13,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 
@@ -208,6 +209,16 @@ public class DGame extends javax.swing.JPanel implements KeyListener{
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ToolItem1MouseClicked(evt);
             }
+            public void mouseEntered(MouseEvent e) {
+                TOOL.Set_STT(0);
+                if(TOOL.Get_TT_Axe() == 1){                    
+                    TOOL.Set_TT_Axe(2);
+                }     
+            }
+            public void mouseExited(MouseEvent e) {
+                TOOL.Set_STT(-1);
+                TOOL.Set_TT_Axe(0);           
+            }
         });
            
         Tool2 = new javax.swing.JLabel();
@@ -216,6 +227,16 @@ public class DGame extends javax.swing.JPanel implements KeyListener{
         Tool2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ToolItem2MouseClicked(evt);
+            }
+            public void mouseEntered(MouseEvent e) {
+                TOOL.Set_STT(0);
+                if(TOOL.Get_TT_Pickaxe() == 1){                    
+                    TOOL.Set_TT_Pickaxe(2);
+                }     
+            }
+            public void mouseExited(MouseEvent e) {
+                TOOL.Set_STT(-1);
+                TOOL.Set_TT_Pickaxe(0);               
             }
         });
         
@@ -226,6 +247,16 @@ public class DGame extends javax.swing.JPanel implements KeyListener{
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ToolItem3MouseClicked(evt);
             }
+            public void mouseEntered(MouseEvent e) {
+                TOOL.Set_STT(0);
+                if(TOOL.Get_TT_Spear() == 1){                    
+                    TOOL.Set_TT_spear(2);
+                }     
+            }
+            public void mouseExited(MouseEvent e) {
+                TOOL.Set_STT(-1);
+                TOOL.Set_TT_spear(0);               
+            }
         });
         
         Tool4 = new javax.swing.JLabel();
@@ -234,6 +265,16 @@ public class DGame extends javax.swing.JPanel implements KeyListener{
         Tool4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ToolItem4MouseClicked(evt);
+            }
+            public void mouseEntered(MouseEvent e) {
+                TOOL.Set_STT(0);
+                if(TOOL.Get_TT_Hp_Potion() == 1){                    
+                    TOOL.Set_TT_hp_Potion(2);
+                }     
+            }
+            public void mouseExited(MouseEvent e) {
+                TOOL.Set_STT(-1);
+                TOOL.Set_TT_hp_Potion(0);               
             }
         });
         
@@ -244,6 +285,16 @@ public class DGame extends javax.swing.JPanel implements KeyListener{
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ToolItem5MouseClicked(evt);
             }
+            public void mouseEntered(MouseEvent e) {
+                TOOL.Set_STT(0);
+                if(TOOL.Get_TT_Tent() == 1){                    
+                    TOOL.Set_TT_tent(2);
+                }     
+            }
+            public void mouseExited(MouseEvent e) {
+                TOOL.Set_STT(-1);
+                TOOL.Set_TT_tent(0);               
+            }
         });
         
         Tool6 = new javax.swing.JLabel();
@@ -252,6 +303,16 @@ public class DGame extends javax.swing.JPanel implements KeyListener{
         Tool6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ToolItem6MouseClicked(evt);
+            }
+            public void mouseEntered(MouseEvent e) {
+                TOOL.Set_STT(0);
+                if(TOOL.Get_TT_Fire_Pit() == 1){                    
+                    TOOL.Set_TT_fire_pit(2);
+                }     
+            }
+            public void mouseExited(MouseEvent e) {
+                TOOL.Set_STT(-1);
+                TOOL.Set_TT_fire_pit(0);               
             }
         });
         
@@ -262,6 +323,16 @@ public class DGame extends javax.swing.JPanel implements KeyListener{
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ToolItem7MouseClicked(evt);
             }
+            public void mouseEntered(MouseEvent e) {
+                TOOL.Set_STT(0);
+                if(TOOL.Get_TT_Ice_Machine() == 1){                    
+                    TOOL.Set_TT_ice_Machine(2);
+                }     
+            }
+            public void mouseExited(MouseEvent e) {
+                TOOL.Set_STT(-1);
+                TOOL.Set_TT_ice_Machine(0);               
+            }
         });
         
         Tool8 = new javax.swing.JLabel();
@@ -270,6 +341,16 @@ public class DGame extends javax.swing.JPanel implements KeyListener{
         Tool8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ToolItem8MouseClicked(evt);
+            }
+            public void mouseEntered(MouseEvent e) {
+                TOOL.Set_STT(0);
+                if(TOOL.Get_TT_Ice_Stone() == 1){                    
+                    TOOL.Set_TT_ice_Stone(2);
+                }     
+            }
+            public void mouseExited(MouseEvent e) {
+                TOOL.Set_STT(-1);
+                TOOL.Set_TT_ice_Stone(0);               
             }
         });
         
@@ -280,6 +361,16 @@ public class DGame extends javax.swing.JPanel implements KeyListener{
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ToolItem9MouseClicked(evt);
             }
+            public void mouseEntered(MouseEvent e) {
+                TOOL.Set_STT(0);
+                if(TOOL.Get_TT_Flall() == 1){                    
+                    TOOL.Set_TT_flall(2);
+                }     
+            }
+            public void mouseExited(MouseEvent e) {
+                TOOL.Set_STT(-1);
+                TOOL.Set_TT_flall(0);               
+            }
         });
         
         Tool10 = new javax.swing.JLabel();
@@ -289,6 +380,16 @@ public class DGame extends javax.swing.JPanel implements KeyListener{
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ToolItem10MouseClicked(evt);
             }
+            public void mouseEntered(MouseEvent e) {
+                TOOL.Set_STT(0);
+                if(TOOL.Get_TT_Brick() == 1){                    
+                    TOOL.Set_TT_brick(2);
+                }     
+            }
+            public void mouseExited(MouseEvent e) {
+                TOOL.Set_STT(-1);
+                TOOL.Set_TT_brick(0);               
+            }
         });
         
         Tool11 = new javax.swing.JLabel();
@@ -297,6 +398,16 @@ public class DGame extends javax.swing.JPanel implements KeyListener{
         Tool11.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ToolItem11MouseClicked(evt);
+            }
+            public void mouseEntered(MouseEvent e) {
+                TOOL.Set_STT(0);
+                if(TOOL.Get_TT_Gate() == 1){                    
+                    TOOL.Set_TT_gate(2);
+                }     
+            }
+            public void mouseExited(MouseEvent e) {
+                TOOL.Set_STT(-1);
+                TOOL.Set_TT_gate(0);               
             }
         });      
     }
@@ -401,6 +512,7 @@ public class DGame extends javax.swing.JPanel implements KeyListener{
         
         BAG.Draw(g);
         TOOL.Draw_Left_Bar(g);
+        
     }
     
     @Override
@@ -433,6 +545,7 @@ public class DGame extends javax.swing.JPanel implements KeyListener{
 
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setFocusCycleRoot(true);
+        setFont(new java.awt.Font("Belisa plumilla manual", 1, 10)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -535,11 +648,11 @@ public class DGame extends javax.swing.JPanel implements KeyListener{
             } break;
             //
             case KeyEvent.VK_NUMPAD0:{
-                BAG.Add_item(51, 1);
+                BAG.Add_item(31, 1);
                 BAG.Load();
             } break;
             case KeyEvent.VK_NUMPAD1:{
-                BAG.Add_item(11, 1);
+                BAG.Add_item(22, 1);
                 BAG.Load();
             } break;
             case KeyEvent.VK_NUMPAD2:{

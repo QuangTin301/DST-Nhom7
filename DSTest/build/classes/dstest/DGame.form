@@ -6,6 +6,9 @@
       <Color id="Default Cursor"/>
     </Property>
     <Property name="focusCycleRoot" type="boolean" value="true"/>
+    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+      <Font name="Belisa plumilla manual" size="10" style="1"/>
+    </Property>
   </Properties>
   <AccessibilityProperties>
     <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value=""/>

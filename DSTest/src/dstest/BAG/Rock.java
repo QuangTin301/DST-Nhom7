@@ -31,7 +31,7 @@ public class Rock extends Base_Item{
        Quantity = 0;
        
        //
-       URL_Image_Item = "res/Bag_item/rock.PNG";
+       URL_Image_Item = "res/Bag_item/flint.PNG";
        //
        
     }
